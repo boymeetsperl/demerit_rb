@@ -3,7 +3,7 @@ require 'subprocess'
 
 class Extract
 
-  def self.assignments(user_map)
+  def self.all(user_map)
     assign_dir_map = {}
 
     user_map.each do |user, arc|
@@ -19,7 +19,7 @@ class Extract
         assign_dir_map[user] = curr_dir
       rescue
         puts "problem extracting #{arc}"
-        assign_dir_map[user] = nil
+        assign_dir_map[user] = 'did not extract'
       end
 
     end

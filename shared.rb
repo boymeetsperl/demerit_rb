@@ -7,4 +7,8 @@ module DemeritConfig
   def self.get
     @opts
   end
+
+  def self.set(key, val)
+  	@opts[key] = val
+  end
 end
