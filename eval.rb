@@ -40,7 +40,23 @@ class Eval
         user_out[student] = program(exe)
       end
     end
-
     user_out
   end
+
+  # a function which verifies output using checking_proc
+  # I really like this function :)
+  def self.check(output, checking_proc)
+    return false if output == 'did not run'
+    return true if checking_proc.call(output)
+    false
+  end
+
+  # method to check the output of everything in the map
+  def self.check_all(output_map, checking_proc)
+    correct = {}
+    output_map.each do |user, output|
+      correct[user] = check(output, checking_proc)
+    end
+  end
+
 end
