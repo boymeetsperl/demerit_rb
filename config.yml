@@ -1,11 +1,11 @@
 # CONFIGURATION FILE FOR DEMERIT_RB or DEMERIT_PY
 
-grade_dir: "/Users/ianmcgaunn/submissions"
-demerit_dir: "/Users/ianmcgaunn/Documents/python/demerit/demerit"
+grade_dir: "/usr/cs/2016/imcgaunn/submit/spiral"
+demerit_dir: "~/demerit_rb"
 
-assign_name: "none"
+assign_name: "spiral"
 gen_makefile: true
 
 run_programs: true
-stdin: "kill yourself"
-argv: "/Users/ianmcgaunn/Documents/python/demerit/demerit/resources/gcd.txt"
+stdin: "5 16"
+argv: ""

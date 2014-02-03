@@ -1,5 +1,3 @@
-require 'english'
-
 class Compile
   def self.gen_mk(assign_dir, assign_name)
     c_files = Dir.entries(assign_dir).select { |file| file[-2, 2] == '.c' }
@@ -33,7 +31,7 @@ class Compile
     Dir.chdir(dir_path)
     begin
       IO.popen(['make'], 'r', err: [:child, :out]) { |pipe| pipe.read }
-      return true unless $CHILD_STATUS != 0
+      return true unless $? != 0
     rescue
       print 'failed to compile #{dir_path}'
       return false
